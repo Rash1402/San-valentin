@@ -58,5 +58,6 @@ function launchConfetti() {
 btnAccept.addEventListener('click', () => {
   launchConfetti();
   btnAccept.textContent = 'Cita aceptada 😍✅';
-  setTimeout(() => (btnAccept.textContent = 'Aceptar la cita 💖'), 2200);
+  setTimeout(() => (btnAccept.textContent = 'Aceptar la cita 💖'), 15000);
 });
+
