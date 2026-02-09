@@ -314,3 +314,126 @@ button:hover{
   from{ opacity:0; transform: translateY(10px) scale(.985); }
   to{ opacity:1; transform: translateY(0) scale(1); }
 }
+
+/* =========================
+   SORPRESA: Caja + Constelación
+========================= */
+
+.surprise{
+  margin: 0 18px 22px;
+  padding: 18px 16px 22px;
+  border:1px solid var(--stroke);
+  border-radius:18px;
+  background: rgba(14,15,24,.50);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 50px rgba(0,0,0,.35);
+  transition: opacity .35s ease, transform .35s ease, max-height .45s ease;
+  max-height: 2200px;
+}
+
+.surprise.is-hidden{
+  opacity:0;
+  transform: translateY(14px);
+  max-height:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.surprise-head{
+  text-align:center;
+  padding: 10px 8px 6px;
+}
+
+.surprise-head h2{
+  margin: 10px 0 6px;
+  font-size: clamp(20px, 2.6vw, 28px);
+  text-shadow: var(--glow);
+}
+
+.surprise-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+  margin-top: 10px;
+}
+
+.surprise-grid .box{ grid-column: span 12; }
+.surprise-grid .constellation{ grid-column: span 12; }
+
+@media(min-width:900px){
+  .surprise-grid .box{ grid-column: span 7; }
+  .surprise-grid .constellation{ grid-column: span 5; }
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:10px;
+  margin-top:12px;
+}
+
+.photo{
+  aspect-ratio: 1 / 1;    /* cuadrado perfecto */
+  overflow:hidden;
+  border-radius:14px;
+  border:1px solid var(--stroke);
+}
+
+
+.photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* recorta sin deformar */
+  border-radius: 0;
+  display:block;
+}
+
+
+.photo figcaption{
+  padding:10px 10px 12px;
+  font-size:13px;
+  color: var(--muted);
+  line-height:1.4;
+}
+
+.note{
+  margin-top: 12px;
+  border:1px solid var(--stroke);
+  border-radius:14px;
+  background: rgba(0,0,0,.20);
+  padding: 12px 12px;
+  color: var(--muted);
+}
+
+.canvas-wrap{
+  margin-top: 12px;
+  border:1px solid var(--stroke);
+  border-radius:14px;
+  overflow:hidden;
+  background: rgba(0,0,0,.25);
+  position:relative;
+}
+
+#sky{
+  width:100%;
+  height:260px;
+  display:block;
+}
+
+.canvas-hint{
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  padding:6px 10px;
+  border:1px solid var(--stroke);
+  border-radius:999px;
+  background: rgba(0,0,0,.35);
+  color: rgba(201,203,224,.92);
+  font-size:12px;
+  backdrop-filter: blur(10px);
+}
+
+/* Animación de entrada */
+.surprise.is-revealed .card{
+  animation: pop .45s ease both;
+}
