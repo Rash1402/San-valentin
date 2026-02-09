@@ -109,3 +109,66 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<!-- 🎁 SORPRESA (oculta) -->
+<section class="surprise is-hidden" id="surprise" aria-hidden="true">
+  <div class="surprise-head">
+    <div class="tag">✨ Sorpresa desbloqueada</div>
+    <h2>Paulina… esto es para ti 💖</h2>
+    <p class="sub">
+      Una cajita de recuerdos y un cielito que se mueve contigo.
+    </p>
+  </div>
+
+  <div class="surprise-grid">
+    <!-- 📦 Caja de Recuerdos -->
+    <article class="box card">
+      <div class="kicker">📦 Caja de Recuerdos</div>
+      <div class="title">Momentos que guardo contigo</div>
+
+      <div class="photo-grid">
+        <!-- Cambia src por tus fotos -->
+        <figure class="photo">
+          <img src="img-1.jpeg" alt="Recuerdo 1" />
+          <figcaption>Tu risa es mi lugar favorito.</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <img src="img-2.jpeg" alt="Recuerdo 2" />
+          <figcaption>Cuando estamos juntos, todo se calma.</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <img src="img-3.jpeg" alt="Recuerdo 3" />
+          <figcaption>Gracias por ser mi paz.</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <img src="img-4.jpeg" alt="Recuerdo 4" />
+          <figcaption>Y mi alegría todos los días.</figcaption>
+        </figure>
+      </div>
+
+      <div class="note">
+        <p>
+          No es un regalo caro… es uno que significa.
+          <b>Me encanta compartir la vida contigo.</b>
+        </p>
+      </div>
+    </article>
+
+    <!-- 🌌 Constelación -->
+    <article class="constellation card">
+      <div class="kicker">🌌 Constelación</div>
+      <div class="title">Un cielo que responde a ti</div>
+      <p class="sub">
+        Toca o mueve el dedo por la pantalla. Conéctalo todo.
+      </p>
+
+      <div class="canvas-wrap">
+        <canvas id="sky" width="900" height="420"></canvas>
+        <div class="canvas-hint">Tip: toca para “encender” estrellas ✨</div>
+      </div>
+    </article>
+  </div>
+</section>
