@@ -1,50 +1,30 @@
 const btnPlan = document.getElementById('btnPlan');
 const btnAccept = document.getElementById('btnAccept');
-const btnMsg = document.getElementById('btnMsg');
 
-const modal = document.getElementById('modal');
-const btnClose = document.getElementById('btnClose');
-const btnCopy = document.getElementById('btnCopy');
-const copyText = document.getElementById('copyText');
-
+const plan = document.getElementById('plan');
 const confetti = document.getElementById('confetti');
 
 btnPlan.addEventListener('click', () => {
-  document.getElementById('plan').scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+  const hidden = plan.classList.contains('is-hidden');
 
-btnMsg.addEventListener('click', () => {
-  copyText.value =
-`Paulina ❤️
-Este sábado 14 te tengo un plan:
-🌳 Chapultepec (paseo y fotitos)
-🍽️ Comida rica (tú eliges 😌)
-🎨 Noche de pintura en casa (música, velitas y brindis)
-¿Te late? 💖`;
-  modal.style.display = 'grid';
-  modal.setAttribute('aria-hidden', 'false');
-});
+  if (hidden) {
+    plan.classList.remove('is-hidden');
+    plan.classList.add('is-revealed');
+    plan.setAttribute('aria-hidden', 'false');
 
-btnClose.addEventListener('click', () => {
-  modal.style.display = 'none';
-  modal.setAttribute('aria-hidden', 'true');
-});
+    btnPlan.textContent = 'Ocultar el plan';
 
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden', 'true');
+    // scroll suave al plan
+    setTimeout(() => {
+      plan.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+  } else {
+    plan.classList.add('is-hidden');
+    plan.classList.remove('is-revealed');
+    plan.setAttribute('aria-hidden', 'true');
+
+    btnPlan.textContent = 'Ver el plan';
   }
-});
-
-btnCopy.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(copyText.value);
-    btnCopy.textContent = '¡Copiado! ✅';
-  } catch {
-    btnCopy.textContent = 'Copia manual 😅';
-  }
-  setTimeout(() => (btnCopy.textContent = 'Copiar'), 1200);
 });
 
 function launchConfetti() {
